@@ -3,53 +3,54 @@
 <!doctype html>
 <html>
 <title>
-AJS Simple calculator
+    AJS Simple calculator
 </title>
-<head>
-<script type="text/javascript"
- src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-<script>
-var app=angular.module("calcApp",[]);
-app.controller("calcCntrl",function($scope)
-{
-$scope.num1=0
-$scope.num2=0
-$scope.result=0
-$scope.operator="add"
-$scope.compute=function(){
-switch($scope.operator){
-case'add':$scope.result=$scope.num1+$scope.num2
-break
-case'sub':$scope.result=$scope.num1-$scope.num2
-break
-case'mul':$scope.result=$scope.num1*$scope.num2
-break
-case'div':if($scope.num2==0){
-alert("divide by zero is error")
-}
-else{
-$scope.result=$scope.num1/$scope.num2
-}
-}
-}
-});
-</script>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+        var app = angular.module("calcApp", []);
+        app.controller("calcCntrl", function ($scope) {
+            $scope.num1 = 0
+            $scope.num2 = 0
+            $scope.result = 0
+            $scope.operator = "add"
+            $scope.compute = function () {
+                switch ($scope.operator) {
+                    case 'add': $scope.result = $scope.num1 + $scope.num2
+                        break
+                    case 'sub': $scope.result = $scope.num1 - $scope.num2
+                        break
+                    case 'mul': $scope.result = $scope.num1 * $scope.num2
+                        break
+                    case 'div': if ($scope.num2 == 0) {
+                        alert("divide by zero is error")
+                    }
+                    else {
+                        $scope.result = $scope.num1 / $scope.num2
+                    }
+                }
+            }
+        });
+    </script>
 </head>
+
 <body ng-app="calcApp">
-<h1>Angular js simple Calculator </h1>
-<div ng-controller="calcCntrl">
-enter first number:<input type="number"ng-model="num1">
-select operator:<select ng-model="operator">
-<option value="add">+</option>
-<option value="sub">-</option>
-<<option value="mul">*</option>
-<option value="div">/</option>
-</select>
-enter second number:<input type="number"ng-model="num2">
-<button ng-click="compute()">compute</button>
-<br/>
-<b>{{num1+" "+operator+" "+num2+"="+result}}</b>
-</div>
+    <h1>Angular js simple Calculator </h1>
+    <div ng-controller="calcCntrl">
+        enter first number:<input type="number" ng-model="num1">
+        select operator:<select ng-model="operator">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <<option value="mul">*</option>
+                <option value="div">/</option>
+        </select>
+        enter second number:<input type="number" ng-model="num2">
+        <button ng-click="compute()">compute</button>
+        <br />
+        <b>{{num1+" "+operator+" "+num2+"="+result}}</b>
+    </div>
 </body>
+
 </html>

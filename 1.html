@@ -4,22 +4,23 @@ name. Note: The default values for first name and last name may be included in t
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 <body>
-<p>Try to change the name.</p>
-<div ng-app="myApp" ng-controller="myCtrl">
-First Name:<input type="text" ng-model="firstName">
-<br>
-Last Name:<input type="text" ng-model="lastName">
-<br><br>
-Full Name:{{firstName+" "+lastName}}
-</div>
-<script>
-var app=angular.module('myApp',[]);
-app.controller('myCtrl',function($scope)
-{
-$scope.firstName="";
-$scope.lastName="";
-});
-</script>
+    <p>Try to change the name.</p>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        First Name:<input type="text" ng-model="firstName">
+        <br>
+        Last Name:<input type="text" ng-model="lastName">
+        <br><br>
+        Full Name:{{firstName+" "+lastName}}
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.firstName = "";
+            $scope.lastName = "";
+        });
+    </script>
 </body>
+
 </html>
