@@ -18,8 +18,12 @@
                         alert("Login Successful")
                     }
                     else {
-                        alert("Login Failed")
-                        document.getElementById("loginButton").disabled=true
+                        $scope.noAttempts++
+                        if ($scope.noAttempts<=3) {
+                            alert("Incorrect username/password! Attempt No."+$scope.noAttempts)
+                        } else{
+                            document.getElementById("loginButton").disabled=true
+                        }
                     }
                 }
             });
