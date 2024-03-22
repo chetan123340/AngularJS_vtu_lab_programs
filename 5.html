@@ -10,9 +10,8 @@ number of students and display the count. Note: Student details may be included 
     <script>
         var app = angular.module("studDetailsApp", []);
         app.controller("studDetailsAppCntrl", function ($scope) {
-            $scope.stdudData = []
+            $scope.studData = []
             $scope.generateData = function () {
-                $scope.studData = []
                 for (var i = 1; i <= $scope.num; i++) {
                     var stud = {
                         "SLNO": i,
